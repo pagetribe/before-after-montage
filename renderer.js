@@ -4,9 +4,11 @@
 
 
 var desktopCapturer = require('electron').desktopCapturer;
+const remote = require('electron').remote;
 
 
 function fullscreenScreenshot(callback, imageFormat) {
+    hideWindow() //gets the window out of the way for the sceen shot
     var _this = this;
     this.callback = callback;
     imageFormat = imageFormat || 'image/jpeg';
@@ -32,6 +34,7 @@ function fullscreenScreenshot(callback, imageFormat) {
             if (_this.callback) {
                 // Save screenshot to base64
                 _this.callback(canvas.toDataURL(imageFormat));
+                restoreWindow()
             } else {
                 console.log('Need callback!');
             }
@@ -77,6 +80,16 @@ function fullscreenScreenshot(callback, imageFormat) {
             }
         }
     });
+}
+
+function hideWindow(){
+    var window = remote.getCurrentWindow();
+    window.hide();  
+}
+
+function restoreWindow(){
+    var window = remote.getCurrentWindow();
+    window.restore();  
 }
 
 
