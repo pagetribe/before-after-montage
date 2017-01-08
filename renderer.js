@@ -80,12 +80,19 @@ function fullscreenScreenshot(callback, imageFormat) {
 }
 
 
-document.getElementById("trigger").addEventListener("click", function(){
+// document.getElementById("trigger").addEventListener("click", function(){
+//     fullscreenScreenshot(function(base64data){
+//         // Draw image in the img tag
+//         document.getElementById("my-preview").setAttribute("src", base64data);
+//     },'image/png');
+// },false);
+
+document.getElementById("before-screenshot-button").addEventListener("click", function(){
     fullscreenScreenshot(function(base64data){
         // Draw image in the img tag
-        document.getElementById("my-preview").setAttribute("src", base64data);
+        document.getElementById("before-image").setAttribute("src", base64data);
     },'image/png');
-},false);
+}, false);
 
 
 

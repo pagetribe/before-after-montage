@@ -2,7 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Before | After</title>
+    <style type="text/css">
+      .container {
+          display: flex;
+      }
+
+      .container > div {
+        height: 200px;
+        width: 680px;
+        padding: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        /*flex: 1;*/
+      }
+
+      .left-column {
+        background-color: lightgreen;
+      }
+
+      .right-column {
+        background-color: lightblue;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -11,12 +37,26 @@
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
     <br>
-    <button class='take-screen-shot'>take screenshot</button>
-    <div class='video'></div>
-    <video></video>
-    <img id="before-image"></img>
-    <img id="my-preview"/>
-    <input id="trigger" value="Fullscreen screenshot" type="button"/>
+
+    <!-- <button class='take-screen-shot'>take screenshot</button> -->
+    <!-- <div class='video'></div> -->
+    <!-- <video></video> -->
+    <!-- <img id="before-image"></img> -->
+    <!-- <img id="my-preview"/> -->
+
+
+    <div class="container">
+      <div class="left-column">
+        <img id="before-image"></img>
+        <input id="before-screenshot-button" value="Before Screenshot" type="button"/>
+      </div>
+      <div class="right-column">
+        <img id="after-image"></img>
+        <input id="after-screenshot-button" value="After Screenshot" type="button"/>
+      </div>
+    </div>
+
+
   </body>
 
   <script>
