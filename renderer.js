@@ -107,6 +107,13 @@ document.getElementById("before-screenshot-button").addEventListener("click", fu
     },'image/png');
 }, false);
 
+document.getElementById("after-screenshot-button").addEventListener("click", function(){
+    fullscreenScreenshot(function(base64data){
+        // Draw image in the img tag
+        document.getElementById("after-image").setAttribute("src", base64data);
+    },'image/png');
+}, false);
+
 
 
 
