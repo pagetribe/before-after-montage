@@ -1,0 +1,9 @@
+Commands:
+npm run webpack
+npm start 
+
+
+
+General Notes:
+Added this to webpack.config.js help with webpack and fix error: Module not found: Error: Can't resolve 'fs' in '/Users/mark/code/before-after-montage/node_modules/electron'
+target: 'electron-renderer'
